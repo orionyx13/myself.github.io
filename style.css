@@ -1,0 +1,59 @@
+/* --- GLOBAL STYLE --- */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+body{
+    background: linear-gradient(180deg,#f8b6d8 0%,#f6a9c9 40%,#fcd6e6 70%,#ffeef5 100%);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- NAVBAR --- */
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);position:fixed;width:100%;top:0;z-index:1000;}
+.logo{font-size:22px;font-weight:bold;color:#d81b60;}
+nav ul{list-style:none;display:flex;gap:25px;}
+nav ul li a{text-decoration:none;font-weight:500;color:#555;transition:0.3s;}
+nav ul li a:hover{color:#d81b60;}
+
+/* --- DEKORASI --- */
+.bg-decor { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.particle { position: absolute; background: rgba(255, 255, 255, 0.4); border-radius: 50%; animation: floatParticle 10s infinite ease-in-out; }
+@keyframes floatParticle {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+    50% { transform: translateY(-100px) translateX(50px); opacity: 0.8; }
+}
+
+/* --- HERO & CONTENT --- */
+section,.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 8%; position: relative;}
+.hero-container{display:flex;align-items:center;justify-content:space-between;gap:50px;width:100%;}
+.hero-text h1{font-size:50px;color:#d81b60;margin:10px 0;}
+.btn{background:#d81b60;color:white;padding:12px 30px;border-radius:30px;text-decoration:none;display:inline-block;transition:0.3s;}
+.btn:hover{transform:translateY(-3px); box-shadow: 0 10px 20px rgba(216, 27, 96, 0.2);}
+
+.hero-img img{
+    width:360px; 
+    border-radius:120px 40px 120px 40px; 
+    box-shadow:0 15px 40px rgba(216,27,96,0.3); 
+    animation:float 4s ease-in-out infinite;
+    border: 5px solid white;
+}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-12px);}100%{transform:translateY(0);}}
+
+/* --- GALLERY & MUSIC (DIPAKAI DI PAGE LAIN) --- */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;width:100%;}
+.gallery-grid a img{width:100%;height:300px;object-fit:cover;border-radius:25px;transition:0.5s;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.gallery-grid a:hover img { transform: scale(1.05); }
+
+.music-section{ background:#fff0f5; padding: 80px 8%; flex-direction: column; align-items: flex-start;}
+.music-header{ color: #d81b60; font-size: 1.5rem; font-weight: 700; border-bottom: 3px solid #d81b60; margin-bottom: 25px;}
+.music-grid{ display: flex; flex-wrap: wrap; gap: 20px; width: 100%; }
+.music-card { background: white; padding: 12px; border-radius: 20px; min-width: 190px; box-shadow: 0 8px 25px rgba(216, 27, 96, 0.1); transition: 0.3s;}
+.album-art { width: 100%; aspect-ratio: 1/1; border-radius: 15px; overflow: hidden; margin-bottom: 10px; }
+.album-art img { width: 100%; height: 100%; object-fit: cover; }
+.music-info h3 { color: #d81b60; font-size: 0.85rem; margin-bottom: 2px; }
+
+.controls { display: flex; justify-content: center; align-items: center; gap: 10px; }
+.ctrl-btn { background: none; border: none; color: #d81b60; font-size: 0.8rem; cursor: pointer; }
+.play-btn { background: #d81b60; color: white !important; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+@media(max-width:900px){.hero-container{flex-direction:column;text-align:center;}.hero-img img{width:260px;}}
+             
